@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react"; // Icons for mobile menu
+import image from "../image/tame-logo.png";
 
 const NavigationHeader = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,12 +16,16 @@ const NavigationHeader = () => {
   return (
     <header className="bg-[#0a1929] p-4 shadow-md border-b border-white/20 sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
-        <h1
-          className="text-[#00e5ff] text-2xl font-bold cursor-pointer font-mono"
+        {/* Combined Logo and Title */}
+        <div
+          className="flex items-center cursor-pointer"
           onClick={() => scrollToSection("categories")}
         >
-          Tamrat
-        </h1>
+          <img src={image} alt="Logo" className="w-8 h-8" />
+          <h1 className="text-[#00e5ff] text-2xl font-bold font-mono">
+            Tamrat
+          </h1>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
